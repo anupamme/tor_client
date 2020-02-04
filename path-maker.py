@@ -38,7 +38,7 @@ if __name__ == '__main__':
             for i in range(NUM_CIRCUITS_PER_GUARD):
                 print(j,i)
                 circ = controller.extend_circuit('0')
-                time.sleep(1)
+                time.sleep(5)
                 rtn = controller.get_circuit(circ, default='')
                 if rtn:
                     circuit_path = ''
