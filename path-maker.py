@@ -10,6 +10,8 @@ from stem.control import Controller
 from stem.descriptor import DocumentHandler
 from stem.descriptor.remote import DescriptorDownloader
 
+NUM_CIRCUITS_PER_GUARD = 1
+
 
 def print_paths(circ):
     circuit_path = ''
@@ -32,8 +34,8 @@ if __name__ == '__main__':
     print("Tor is running version %s" % controller.get_version())
 
     with open('output.txt', 'w') as f:
-        for j in range(100):
-            for i in range(36):
+        for j in range(3600):
+            for i in range(NUM_CIRCUITS_PER_GUARD):
                 print(j,i)
                 circ = controller.extend_circuit('0')
                 time.sleep(1)
